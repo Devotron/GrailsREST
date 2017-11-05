@@ -1,0 +1,1768 @@
+{
+	"info": {
+		"name": "API REST",
+		"_postman_id": "68440547-7ea3-8c5e-5eee-f3c38c2398ac",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"description": "",
+			"item": [
+				{
+					"name": "GET Libraries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"library"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "3ed8fd6e-1c5f-482d-88ca-9608ac2ecacd",
+							"name": "GET Libraries xml",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 20:22:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 55,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><list><library id=\"1\"><address>15 Av. Gonzales</address><books><book id=\"2\" /><book id=\"1\" /><book id=\"3\" /></books><name>Librairie Saint-Joseph</name><yearCreated>1985</yearCreated></library><library id=\"2\"><address>23 Av. Apotheon</address><books><book id=\"4\" /><book id=\"5\" /></books><name>Librairie Hermes</name><yearCreated>1900</yearCreated></library></list>"
+						},
+						{
+							"id": "2644d7f6-77c4-40c7-9ecb-01e2f243838a",
+							"name": "GET Libraries json",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 20:23:48 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 64,
+							"body": "[{\"id\":1,\"address\":\"15 Av. Gonzales\",\"books\":[{\"id\":2},{\"id\":3},{\"id\":1}],\"name\":\"Librairie Saint-Joseph\",\"yearCreated\":1985},{\"id\":2,\"address\":\"23 Av. Apotheon\",\"books\":[{\"id\":5},{\"id\":4}],\"name\":\"Librairie Hermes\",\"yearCreated\":1900}]"
+						}
+					]
+				},
+				{
+					"name": "GET Library",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/library/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"library",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "3ce18e72-4265-448f-b1aa-56791b1cc53a",
+							"name": "GET Library xml",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:42:36 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 75,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><library id=\"1\"><address>15 Av. Gonzales</address><books><book id=\"1\" /><book id=\"2\" /><book id=\"3\" /></books><name>Librairie Saint-Joseph</name><yearCreated>1985</yearCreated></library>"
+						},
+						{
+							"id": "84e0aee6-aec1-4d23-a835-d21905c678da",
+							"name": "GET Library json",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:43:00 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 61,
+							"body": "{\"id\":1,\"address\":\"15 Av. Gonzales\",\"books\":[{\"id\":1},{\"id\":3},{\"id\":2}],\"name\":\"Librairie Saint-Joseph\",\"yearCreated\":1985}"
+						}
+					]
+				},
+				{
+					"name": "GET Books",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"book"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "aa862c69-2a65-4dce-b3fc-baa26cff7ecf",
+							"name": "GET Books xml",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:35:31 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 56,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><list><book id=\"1\"><library id=\"1\" /><name>Livre des révélations</name><releaseDate>2017-11-04 20:47:24.695 CET</releaseDate><isbn>REV2017</isbn><author>Flamarion</author></book><book id=\"2\"><library id=\"1\" /><name>Grails pour les nuls</name><releaseDate>2017-11-04 20:47:24.696 CET</releaseDate><isbn>GRNUL17</isbn><author>Hachette</author></book><book id=\"3\"><library id=\"1\" /><name>La dépression après Grails</name><releaseDate>2017-11-04 20:47:24.697 CET</releaseDate><isbn>DEPGL17</isbn><author>Quebec-livres</author></book></list>"
+						},
+						{
+							"id": "499a85ed-a536-4b69-95d7-38a27fe14e1d",
+							"name": "GET Books json",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:35:54 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 56,
+							"body": "[{\"id\":1,\"library\":{\"id\":1},\"name\":\"Livre des révélations\",\"releaseDate\":\"2017-11-04T19:47:24Z\",\"isbn\":\"REV2017\",\"author\":\"Flamarion\"},{\"id\":2,\"library\":{\"id\":1},\"name\":\"Grails pour les nuls\",\"releaseDate\":\"2017-11-04T19:47:24Z\",\"isbn\":\"GRNUL17\",\"author\":\"Hachette\"},{\"id\":3,\"library\":{\"id\":1},\"name\":\"La dépression après Grails\",\"releaseDate\":\"2017-11-04T19:47:24Z\",\"isbn\":\"DEPGL17\",\"author\":\"Quebec-livres\"}]"
+						}
+					]
+				},
+				{
+					"name": "GET Book",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"book",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "afd8f6c3-527a-4910-8a88-00a27e9b98ea",
+							"name": "GET Book xml",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:33:29 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 60,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><book id=\"2\"><library id=\"1\" /><name>Grails pour les nuls</name><releaseDate>2017-11-04 20:47:24.696 CET</releaseDate><isbn>GRNUL17</isbn><author>Hachette</author></book>"
+						},
+						{
+							"id": "7d89d448-0794-48d0-889d-1b801629e909",
+							"name": "GET Book json",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:34:14 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 67,
+							"body": "{\"id\":2,\"library\":{\"id\":1},\"name\":\"Grails pour les nuls\",\"releaseDate\":\"2017-11-04T19:47:24Z\",\"isbn\":\"GRNUL17\",\"author\":\"Hachette\"}"
+						}
+					]
+				},
+				{
+					"name": "GET Libraries Redirect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/libraries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"libraries"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "a8230aca-8393-43f2-81b3-9244c6a79b29",
+							"name": "GET Libraries Redirect",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/libraries",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"libraries"
+									]
+								}
+							},
+							"status": "Moved Permanently",
+							"code": 301,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 21:03:53 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 75,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><list><library id=\"1\"><address>15 Av. Gonzales</address><books><book id=\"3\" /><book id=\"2\" /><book id=\"1\" /></books><name>Librairie Saint-Joseph</name><yearCreated>1985</yearCreated></library><library id=\"2\"><address>23 Av. Apotheon</address><books><book id=\"4\" /><book id=\"5\" /></books><name>Librairie Hermes</name><yearCreated>1900</yearCreated></library></list>"
+						}
+					]
+				},
+				{
+					"name": "GET Books Redirect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"books"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "b5d8e968-2980-4d6e-bfa6-2b9c26775e14",
+							"name": "GET Books Redirect",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"books"
+									]
+								}
+							},
+							"status": "Moved Permanently",
+							"code": 301,
+							"_postman_previewlanguage": "xml",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml;charset=UTF-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 20:58:35 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 84,
+							"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><list><book id=\"1\"><library id=\"1\" /><name>Livre des révélations</name><releaseDate>2017-11-05 21:57:06.138 CET</releaseDate><isbn>REV2017</isbn><author>Flamarion</author></book><book id=\"2\"><library id=\"1\" /><name>Grails pour les nuls</name><releaseDate>2017-11-05 21:57:06.139 CET</releaseDate><isbn>GRNUL17</isbn><author>Hachette</author></book><book id=\"3\"><library id=\"1\" /><name>La dépression après Grails</name><releaseDate>2017-11-05 21:57:06.140 CET</releaseDate><isbn>DEPGL17</isbn><author>Quebec-livres</author></book><book id=\"4\"><library id=\"2\" /><name>1984</name><releaseDate>2017-11-05 21:57:06.141 CET</releaseDate><isbn>L198417</isbn><author>Georges Orwell</author></book><book id=\"5\"><library id=\"2\" /><name>Gang of four</name><releaseDate>2017-11-05 21:57:06.141 CET</releaseDate><isbn>LGO417</isbn><author>J'ai lu</author></book></list>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"description": "",
+			"item": [
+				{
+					"name": "POST Library",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"15 Av. Gonzales\",\n    \"books\": [\n        {\n            \"id\": 1\n        },\n        {\n            \"id\": 3\n        },\n        {\n            \"id\": 2\n        }\n    ],\n    \"name\": \"Librairie Saint-Joseph\",\n    \"yearCreated\": 1985\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"library"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "680f6878-cf55-45b1-aed4-2cc3f6ee3eba",
+							"name": "POST Library post-data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "address",
+											"value": "24 av Pensilvanie",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "The UberLibrary",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "yearCreated",
+											"value": "1985",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 17:28:05 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 62,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "POST Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "HELLSING",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "isbn",
+									"value": "ISBN",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "releaseDate",
+									"value": "18/05/1985",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Hakuma",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "library",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"book"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "f3384230-ecbd-4b49-be14-f273053a6679",
+							"name": "POST Book post-data",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Bel-Ami",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "12/08/1975",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "isbn",
+											"value": "MAUBEL17",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "author",
+											"value": "Maupassant",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "library",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 16:16:35 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 21,
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PUT",
+			"description": "",
+			"item": [
+				{
+					"name": "PUT Library",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"15 Av. St Germain\",\n    \"name\": \"Librairie 20\",\n    \"yearCreated\": 1970\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/library/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"library",
+								"2"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "d929e8f5-ea17-42d6-923b-b748d76a1ea5",
+							"name": "PUT Library",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"15 Av. St Germain\",\n    \"name\": \"Librairie 20\",\n    \"yearCreated\": 1970\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 20:11:25 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 61,
+							"body": ""
+						},
+						{
+							"id": "1864459f-ebfc-4dd7-b01c-c75b95249462",
+							"name": "PUT Library Bad Request - ID manquant",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"15 Av. St Germain\",\n    \"name\": \"Librairie 20\",\n    \"yearCreated\": 1970\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 20:12:24 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 40,
+							"body": "Bad request : method PUT needs a library ressource ID"
+						}
+					]
+				},
+				{
+					"name": "PUT Book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"library\": {\n        \"id\": 2\n    },\n    \"name\": \"Bouquin\",\n    \"releaseDate\": \"1975-04-09T23:00:00Z\",\n    \"isbn\": \"ISBN\",\n    \"author\": \"George\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"book",
+								"1"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "13cebcf7-f1f0-41b2-834f-46c001a40c6d",
+							"name": "PUT Book Bad request - ID manquant ",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"library\": {\n        \"id\": 3\n    },\n    \"name\": \"Bouquin\",\n    \"releaseDate\": \"1975-04-09T23:00:00Z\",\n    \"isbn\": \"ISBN\",\n    \"author\": \"George\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 20:18:37 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 69,
+							"body": "Bad request : method PUT needs a book ressource ID"
+						},
+						{
+							"id": "7357d5a9-6fe3-43ec-9dd8-f655394014da",
+							"name": "PUT Book",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"library\": {\n        \"id\": 2\n    },\n    \"name\": \"Bouquin\",\n    \"releaseDate\": \"1975-04-09T23:00:00Z\",\n    \"isbn\": \"ISBN\",\n    \"author\": \"George\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 05 Nov 2017 21:05:53 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 04:14:07 GMT+0100 (Paris, Madrid)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/WebServiceREST",
+									"secure": false,
+									"value": "3ADFBB6A611135ABADEE620D740A777B",
+									"key": "JSESSIONID"
+								}
+							],
+							"responseTime": 69,
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "DELETE",
+			"description": "",
+			"item": [
+				{
+					"name": "DELETE Library",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/library/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"library",
+								"2"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "09f1e0a9-9d0d-473b-8f19-fc318b7a703e",
+							"name": "DELETE Library 400 BAD REQUEST",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:43:50 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 60,
+							"body": "Bad request : method DELETE needs a library ressource ID"
+						},
+						{
+							"id": "a423d18e-6b00-4783-949c-e44bb4ad302a",
+							"name": "DELETE Library 404 NOT FOUND",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/library/12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"library",
+										"12"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:44:53 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 55,
+							"body": "The ressource library ID : 12 doesn't exist"
+						}
+					]
+				},
+				{
+					"name": "DELETE Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/book/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"book",
+								"3"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "6ccc433a-b649-4186-80cf-2d542e9f408f",
+							"name": "DELETE Book 400 BAD REQUEST",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:45:49 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 60,
+							"body": "Bad request : method DELETE needs a book ressource ID"
+						},
+						{
+							"id": "76ad84ad-0ed0-4bf6-b710-0716ef39ae2a",
+							"name": "DELETE Book 404 NOT FOUND",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8081/WebServiceREST/book/12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"WebServiceREST",
+										"book",
+										"12"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Nov 2017 22:46:57 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked",
+									"name": "Transfer-Encoding",
+									"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+								},
+								{
+									"key": "X-Application-Context",
+									"value": "application:development:8081",
+									"name": "X-Application-Context",
+									"description": "Custom header"
+								}
+							],
+							"cookie": [],
+							"responseTime": 51,
+							"body": "The ressource book ID : 12 doesn't exist"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "OPTIONS",
+			"description": "",
+			"item": [
+				{
+					"name": "OPTIONS Library",
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/library",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"library"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "OPTIONS Book",
+					"request": {
+						"method": "OPTIONS",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8081/WebServiceREST/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"WebServiceREST",
+								"book"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
