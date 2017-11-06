@@ -6,7 +6,7 @@ import org.grails.web.json.JSONObject
 
 class LibraryController {
 
-    static  allowedMethods = [getLibrary: "GET", getLibraries: "GET", getLibrariesRedirect:"GET", getLibraryBooks: "GET", createLibrary: "POST", updateLibrary: "PUT", deleteLibrary: "DELETE", optionsLibrary: "OPTIONS"]
+    static  allowedMethods = [getLibrary: "GET", getLibraries: "GET", getLibrariesRedirect:"GET", getLibraryBooks: "GET", getLibraryBook: "GET", createLibrary: "POST", addBook: "POST", updateLibrary: "PUT", deleteLibrary: "DELETE", optionsLibrary: "OPTIONS"]
 
     def index() {}
 
@@ -162,7 +162,7 @@ class LibraryController {
         } else return false
     }
 
-    // GET library/id/books
+    // GET library/id/book/idbook
     def getLibraryBooks() {
         println("GET LIBRARY BOOKS")
         if (!Library.get(params.id)) {
@@ -181,4 +181,63 @@ class LibraryController {
         }
 
     }
+
+    // GET library/id/books/idbook
+    def getLibraryBook() {
+        println("GET LIBRARY BOOK")
+        println(params)
+
+        if (!Library.get(params.id)) {
+            render(status: 404, text: "The ressource library ID : ${params.id} doesn't exist")
+            return
+        }
+
+        if (!Book.get(params.idbook)) {
+            render(status: 404, text: "The ressource book ID : ${params.idbook} doesn't exist")
+            return
+        }
+
+        def book = Book.get(params.idbook)
+
+        if ( book.library.id.equals(params.id) ) {
+            render(status: 404, text: "The ressource library[ID : ${params.id}] doesn't have a ressource book with ID : ${params.idbook}")
+            return
+        }
+
+        response.status = 200
+
+        withFormat {
+            xml { render book as XML }
+            json { render book as JSON }
+        }
+
+    }
+
+    def addBook() {
+
+        if (!Library.get(params.id)) {
+            render(status: 404, text: "The ressource library ID : ${params.id} doesn't exist")
+            return
+        }
+
+        if ( request.getJSON().toString().equals("{}") ) {
+            println("400")
+            render(status: 400, text:"Bad request : method PUT datas must be send as JSON {name:, releaseDate:, isbn:, author:, library:{id:}})")
+            return
+        }
+
+        JSONObject b = new JSONObject(request.getJSON())
+
+        if ( !b.name || !b.releaseDate || !b.isbn || !b.author ) {
+            println("400")
+            render(status: 400, text:"Bad request : missing parameter(s) {name:, releaseDate:, isbn:, author:)")
+            return
+        }
+
+        Book book = new Book(name:  b.name, releaseDate: Date.parse("yyyy-MM-dd", b.releaseDate), isbn: b.isbn, author: b.author)
+
+        Library.get(params.id).addToBooks(book).save(flush:true)
+        render(status: 200)
+    }
+
 }

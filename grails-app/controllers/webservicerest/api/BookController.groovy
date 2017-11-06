@@ -15,7 +15,7 @@ class BookController {
         println("GET BOOK")
 
         if (!Book.get(params.id)) {
-            render(status: 400, text: "The ressource book ID : ${params.id} doesn't exist")
+            render(status: 404, text: "The ressource book ID : ${params.id} doesn't exist")
             return
         }
 

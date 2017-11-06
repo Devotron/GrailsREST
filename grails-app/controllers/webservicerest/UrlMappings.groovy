@@ -28,5 +28,7 @@ class UrlMappings {
         "/library/$id?"(controller: "library", action: "updateLibrary", method:"PUT")
         "/library/$id?"(controller: "library", action: "deleteLibrary", method: "DELETE")
         "/library/$id/books"(controller: "library", action: "getLibraryBooks", method: "GET")
+        "/library/$id/book/$idbook"(controller: "library", action: "getLibraryBook", method: "GET")
+        "/library/$id/book"(controller: "library", action: "addBook", method: "POST")
     }
 }
