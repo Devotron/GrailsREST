@@ -13,5 +13,5 @@ Lien : https://github.com/Devotron/GrailsREST/blob/master/Documentation%20API%20
 Vous pourrez retrouver une collection des tests des requêtes possible sur l'API REST (Postman + exemple postman).
 Les exemple Postman doivent parfois être rechargé, étant donné que les informations affichées sont parfois un cache d'une requête précedente. 
 
-Lien :
+Lien : https://github.com/Devotron/GrailsREST/blob/master/API%20REST.postman_collection.json
 
