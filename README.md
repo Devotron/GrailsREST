@@ -2,7 +2,7 @@
 
 Réalisé par Michaël Gianfaldone.
 
-### Etat actuelle
+### Etat actuel
 
 - Implémentation des méthodes GET (Listing, iD), POST (JSON ET FORM-DATA), PUT (JSON), DELETE, OPTIONS pour les ressources Bibliothèque et Livre
 - Redirection 301
