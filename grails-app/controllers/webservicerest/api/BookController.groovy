@@ -53,27 +53,49 @@ class BookController {
     // HTTP POST
     def createBook() {
         println("POST BOOK")
-        println(params)
 
         if ( request.getJSON().toString().equals("{}") && invalidBookParams(params) ) {
             println("400")
             render(status: 400, text:"Bad request : method POST datas must be send either as form-data with parameters" +
-                    " (name, releaseDate, isbn, author, library) or json")
+                    " (name, releaseDate(format : yyyy-MM-dd), isbn, author, library) or json")
             return
         }
 
-        if ( !Library.get(params.library) ) {
-            render(status: 400, text:"Bad request : The ressource book ID : ${params.id} doesn't exist")
-            return
-        }
 
+        //CAS form-data
         if ( !invalidBookParams(params) ) {
+            println("FORM-DATA")
+            //Bibliothèque invalide
+            if ( !Library.get(params.library) ) {
+                render(status: 404, text:"Bad request : The ressource library ID : ${params.library} doesn't exist")
+                return
+            }
 
-            Book book = new Book(name:  params.name, releaseDate: Date.parse("dd/MM/yyyy", params.releaseDate), isbn: params.isbn, author: params.author)
+            Book book = new Book(name:  params.name, releaseDate: Date.parse("yyyy-MM-dd", params.releaseDate), isbn: params.isbn, author: params.author)
 
             Library.get(params.library).addToBooks(book).save(flush:true)
+
+            render(status: 200)
+            return
         }
 
+        //CAS JSON
+        // - Recuperation du JSON
+        JSONObject json = new JSONObject(request.getJSON())
+
+        if ( invalidBookParams(json) ) {
+            render(status: 400, text:"Bad request : method POST datas must be send as JSON (name:, releaseDate:yyyy-MM-dd, isbn:, author:, library:)")
+            return
+        }
+
+        //Bibliothèque invalide
+        if ( !Library.get(json.library.id) ) {
+            render(status: 404, text:"Bad request : The ressource library ID : ${json.library.id} doesn't exist")
+            return
+        }
+
+        Book book = new Book(name:  json.name, releaseDate: Date.parse("yyyy-MM-dd", json.releaseDate), isbn: json.isbn, author: json.author)
+        Library.get(json.library.id).addToBooks(book).save(flush:true)
         render(status: 200)
 
     }
@@ -81,7 +103,6 @@ class BookController {
     // HTTP PUT
     def updateBook() {
         println("PUT BOOK")
-        println(params)
 
         if ( params.id == null) {
             println("400")
@@ -89,36 +110,32 @@ class BookController {
             return
         }
 
-        if ( request.getJSON().toString().equals("{}") && invalidBookParams(params) ) {
-            println("400")
-            render(status: 400, text:"Bad request : method PUT datas must be send either as form-data with parameters" +
-                    " (name, releaseDate, isbn, author, library) or json")
+        if ( !Book.get(params.id) ) {
+            println("404")
+            render(status: 404, text:"Bad request : The ressource book ID : ${params.id} doesn't exist")
             return
         }
 
-        if ( request.getJSON().toString().equals("{}") && !Library.get(params.library) ) {
-            render(status: 400, text:"Bad request : The ressource library ID : ${params.library} doesn't exist")
-            return
-        }
-
-        if (!Book.get(params.id)) {
-            render(status: 400, text: "The ressource book ID : ${params.id} doesn't exist")
-            return
-        }
-
-
+        // - Recuperation du JSON
         JSONObject b = new JSONObject(request.getJSON())
+
+        if ( request.getJSON().toString().equals("{}") || invalidBookParams(b) ) {
+            println("400")
+            render(status: 400, text:"Bad request : method PUT datas must be send as JSON {name:, releaseDate:, isbn:, author:, library:{id:}})")
+            return
+        }
+
+        if ( !Library.get(b.library.id) ) {
+            println("404")
+            render(status: 404, text:"Bad request : The ressource library ID : ${b.library.id} doesn't exist")
+            return
+        }
 
         def book = Book.get(params.id)
         book.name = b.name
         book.releaseDate = Date.parse("yyyy-MM-dd", b.releaseDate)
         book.isbn = b.isbn
         book.author = b.author
-
-        if (!Library.get(b.library.id)) {
-            render(status: 400, text: "The ressource library ID : ${b.library.id} doesn't exist")
-            return
-        }
 
         book.save(flush:true)
 

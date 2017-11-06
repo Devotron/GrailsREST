@@ -8,7 +8,7 @@ class LibraryController {
 
     static  allowedMethods = [getLibrary: "GET", getLibraries: "GET", getLibrariesRedirect:"GET", getLibraryBooks: "GET", createLibrary: "POST", updateLibrary: "PUT", deleteLibrary: "DELETE", optionsLibrary: "OPTIONS"]
 
-    def index() { render(status:  200)}
+    def index() {}
 
     //GET /biblio/1/books
     //PUT /biblio/2/book/1
@@ -64,26 +64,33 @@ class LibraryController {
             return
         }
 
+        //CAS form-data
         if ( !invalidLibraryParams(params) ) {
-            println("Params")
-            println(params)
+            println("FORM-DATA")
 
             Library library = new Library(name: params.name, address: params.address, yearCreated: Integer.parseInt(params.yearCreated))
-
             library.save(flush:true)
-
+            render(status: 200)
+            return
         }
 
+        //CAS JSON
+        // - Recuperation du JSON
+        JSONObject json = new JSONObject(request.getJSON())
 
+        if ( invalidLibraryParams(json) ) {
+            render(status: 400, text:"Bad request : method POST datas must be send as JSON (name:, address:, yearCreated:)")
+            return
+        }
+
+        def library = new Library(name: json.name, yearCreated: json.optInt("yearCreated"), address:  json.address)
+        library.save(flush:true)
         render(status: 200)
-
     }
 
     // HTTP PUT
     def updateLibrary() {
         println("PUT LIBRARY")
-        println(params)
-        println(request.getJSON())
 
         if ( params.id == null) {
             println("400")
@@ -91,24 +98,26 @@ class LibraryController {
             return
         }
 
-        if ( request.getJSON().toString().equals("{}") && invalidLibraryParams(params) ) {
-            println("400")
-            render(status: 400, text:"Bad request : method PUT datas must be send either as form-data with parameters" +
-                    " (name, address, yearCreated) or json")
-            return
-        }
-
         if (!Library.get(params.id)) {
-            render(status: 400, text: "The ressource library ID : ${params.id} doesn't exist")
+            render(status: 404, text: "The ressource library ID : ${params.id} doesn't exist")
             return
         }
 
+        // - Recuperation du JSON
         JSONObject b = new JSONObject(request.getJSON())
+
+        if ( request.getJSON().toString().equals("{}") || invalidLibraryParams(b) ) {
+            println("400")
+            render(status: 400, text:"Bad request : method PUT datas must be send as JSON" +
+                    " (name:, address:, yearCreated:)")
+            return
+        }
 
         def library = Library.get(params.id)
         library.name = b.name
         library.yearCreated = b.optInt("yearCreated")
         library.address = b.address
+
         library.save(flush:true)
 
         render(status: 200)
@@ -155,7 +164,7 @@ class LibraryController {
 
     // GET library/id/books
     def getLibraryBooks() {
-        println("Appel getLibraryBooks()")
+        println("GET LIBRARY BOOKS")
         if (!Library.get(params.id)) {
             println("Pas de bibliothèque avec cet ID")
             render(status: 400, text: "The ressource library ID : ${params.id} doesn't exist")
